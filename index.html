@@ -3,501 +3,265 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Wasak Kiddies School</title>
-
+<title>Wasak Kiddies School Portal</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 :root{
-    --maroon:#800000;
-    --gold:#FFD700;
-    --white:#ffffff;
-    --light:#f5f5f5;
+--maroon:#800000;
+--gold:#FFD700;
+--white:#ffffff;
+--light:#f5f5f5;
+}
+body{background:var(--white)}
+
+header{
+background:var(--maroon);
+color:white;
+padding:15px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-body{
-    background:white;
+.brand{display:flex;align-items:center;gap:10px;cursor:pointer}
+.brand img{width:55px;height:55px;border-radius:8px;border:2px solid var(--gold)}
+.brand h2{color:var(--gold);font-size:18px}
+.brand small{font-size:11px}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-size:14px;
 }
-
-/* NAVIGATION */
-
-nav{
-    background:var(--maroon);
-    color:white;
-    padding:12px 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-
-.logo-box{
-    display:flex;
-    align-items:center;
-    cursor:pointer;
-}
-
-.logo-box img{
-    width:55px;
-    height:55px;
-    border-radius:8px;
-    border:2px solid var(--gold);
-    margin-right:10px;
-}
-
-.logo-box h2{
-    color:var(--gold);
-    font-size:18px;
-}
-
-.logo-box p{
-    font-size:11px;
-}
-
-.nav-links{
-    display:flex;
-    gap:20px;
-    list-style:none;
-}
-
-.nav-links a{
-    color:white;
-    text-decoration:none;
-}
-
-/* FLOATING BUTTONS */
-
-.float-box{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    z-index:999;
-}
-
-.float-btn{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    text-decoration:none;
-    font-size:22px;
-}
-
-.whatsapp{
-    background:#25D366;
-}
-
-.facebook{
-    background:#1877F2;
-}
-
-.phone{
-    background:var(--maroon);
-}
-
-/* PAGE */
-
-section{
-    display:none;
-    min-height:80vh;
-    padding:40px 5%;
-}
-
-.active{
-    display:block;
-}
-
-/* HERO */
 
 .hero{
-    height:70vh;
-    background:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200');
-    background-size:cover;
-    background-position:center;
-    border-radius:15px;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-    color:white;
+padding:60px 20px;
+text-align:center;
+background:linear-gradient(rgba(128,0,0,.8),rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200');
+background-size:cover;
+background-position:center;
+color:white;
 }
 
-.hero h1{
-    font-size:40px;
-}
+.hero h1{font-size:35px}
+.hero p{margin-top:10px}
 
-.btn{
-    margin-top:20px;
-    padding:12px 25px;
-    border:none;
-    border-radius:30px;
-    cursor:pointer;
-    background:var(--gold);
-    color:var(--maroon);
-    font-weight:bold;
+.container{max-width:1200px;margin:auto;padding:20px}
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+margin:15px 0;
+box-shadow:0 2px 10px rgba(0,0,0,.1)
 }
-
-/* GRID */
 
 .grid{
-    margin-top:30px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
 }
 
-.card{
-    background:var(--light);
-    padding:20px;
-    border-radius:12px;
-    border-left:5px solid var(--maroon);
+.class-box{
+background:var(--light);
+padding:15px;
+border-left:4px solid var(--maroon);
+border-radius:8px;
+text-align:center;
 }
 
-/* FORM */
-
-.form-box{
-    max-width:500px;
-    margin:auto;
-    background:white;
-    box-shadow:0 0 10px rgba(0,0,0,.15);
-    padding:25px;
-    border-radius:12px;
+input,select,textarea{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:6px;
 }
 
-input,select{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
+button{
+background:var(--maroon);
+color:white;
+border:none;
+padding:12px 18px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.hidden{display:none}
+
+.social{
+position:fixed;
+right:15px;
+bottom:15px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.social a{
+width:50px;
+height:50px;
+background:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+box-shadow:0 2px 8px rgba(0,0,0,.2);
 }
 
 footer{
-    background:black;
-    color:white;
-    text-align:center;
-    padding:20px;
+background:black;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:20px;
 }
 
 @media(max-width:768px){
-
-    .nav-links{
-        display:none;
-    }
-
-    .hero h1{
-        font-size:28px;
-    }
-
+.hero h1{font-size:26px}
 }
-
 </style>
 </head>
-
 <body>
 
-<!-- FLOATING SOCIAL BUTTONS -->
-
-<div class="float-box">
-
-<a href="tel:+2348063890326" class="float-btn phone">
-<i class="fas fa-phone"></i>
-</a>
-
-<a href="https://wa.me/2348129046747" class="float-btn whatsapp">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-<a href="https://www.facebook.com/profile.php?id=61578653940561" class="float-btn facebook">
-<i class="fab fa-facebook-f"></i>
-</a>
-
+<header>
+<div class="brand">
+<img src="logo.png" alt="School Logo">
+<div>
+<h2>WASAK KIDDIES SCHOOL</h2>
+<small>Sound Education With Moral Excellence</small>
 </div>
-
-
-<!-- NAVIGATION -->
+</div>
 
 <nav>
-
-<div class="logo-box" onclick="showPage('home')">
-
-<img src="IMG-logo.png" alt="School Logo">
-
-<div>
-<h2>WASAK KIDDIES</h2>
-<p>Sound Education With Moral Excellence</p>
-</div>
-
-</div>
-
-<ul class="nav-links">
-
-<li><a href="#" onclick="showPage('home')">Home</a></li>
-<li><a href="#" onclick="showPage('about')">About</a></li>
-<li><a href="#" onclick="showPage('result')">Results</a></li>
-<li><a href="#" onclick="showPage('portal')">Staff Login</a></li>
-
-</ul>
-
+<a href="#">Home</a>
+<a href="#classes">Classes</a>
+<a href="#login">Login</a>
+<a href="#results">Results</a>
 </nav>
+</header>
 
-
-<!-- HOME -->
-
-<section id="home" class="active">
-
-<div class="hero">
-
+<section class="hero">
 <h1>WELCOME TO WASAK KIDDIES SCHOOL</h1>
+<p>Nursery & Primary School Management Portal</p>
+</section>
 
-<p>Building Future Leaders</p>
+<div class="container">
 
-<button class="btn" onclick="showPage('about')">
-
-Learn More
-
-</button>
-
-</div>
-
-
+<div class="card" id="classes">
+<h2>School Classes</h2>
 <div class="grid">
-
-<div class="card">
-
-<h3>Admission</h3>
-
-<p>Admission is ongoing.</p>
-
+<div class="class-box">Nursery 1</div>
+<div class="class-box">Nursery 2</div>
+<div class="class-box">Primary 1</div>
+<div class="class-box">Primary 2</div>
+<div class="class-box">Primary 3</div>
+<div class="class-box">Primary 4</div>
+<div class="class-box">Primary 5</div>
+<div class="class-box">Primary 6</div>
+</div>
 </div>
 
-<div class="card">
-
-<h3>Activities</h3>
-
-<p>Sports and cultural activities available.</p>
-
-</div>
-
-<div class="card">
-
-<h3>Excellence</h3>
-
-<p>Academic and moral excellence.</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<h1>ABOUT OUR SCHOOL</h1>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>Vision</h3>
-
-<p>To build leaders.</p>
-
-</div>
-
-<div class="card">
-
-<h3>Management</h3>
-
-<p>Proprietor: Mr. Sanusi Ibrahim</p>
-<p>Administrator: Mrs. Afisu Titilayo</p>
-<p>SPA Officer: Mr. Olaifa</p>
-
-</div>
-
-<div class="card">
-
-<h3>Location</h3>
-
-<p>Ilaro, Ogun State.</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- RESULT -->
-
-<section id="result">
-
-<div class="form-box">
-
-<h2>CHECK RESULT</h2>
-
-<input id="studentID" placeholder="Enter Student ID">
-
-<button class="btn" onclick="checkResult()">
-
-Check Result
-
-</button>
-
-<div id="resultOutput"></div>
-
-</div>
-
-</section>
-
-
-<!-- LOGIN -->
-
-<section id="portal">
-
-<div class="form-box">
-
-<h2>STAFF LOGIN</h2>
-
+<div class="card" id="login">
+<h2>Staff Login</h2>
 <select id="role">
-
-<option value="teacher">Teacher</option>
-
+<option value="">Select User</option>
+<option value="proprietor">Proprietor</option>
 <option value="spa">SPA Officer</option>
-
-<option value="admin">Proprietor</option>
-
+<option value="nursery1">Nursery 1 Teacher</option>
+<option value="nursery2">Nursery 2 Teacher</option>
+<option value="primary1">Primary 1 Teacher</option>
+<option value="primary2">Primary 2 Teacher</option>
+<option value="primary3">Primary 3 Teacher</option>
+<option value="primary4">Primary 4 Teacher</option>
+<option value="primary5">Primary 5 Teacher</option>
+<option value="primary6">Primary 6 Teacher</option>
 </select>
+<input type="password" id="password" placeholder="Enter Password">
+<button onclick="login()">Login</button>
+</div>
 
-<input type="password" id="password" placeholder="Password">
+<div class="card hidden" id="dashboard">
+<h2 id="welcomeText">Dashboard</h2>
 
-<button class="btn" onclick="login()">
+<h3>Pupil Bio Data</h3>
+<input placeholder="Pupil Full Name">
+<input placeholder="Age">
+<input type="date">
+<input placeholder="Gender">
+<input placeholder="Home Address">
+<input placeholder="Father's Name">
+<input placeholder="Mother's Name">
+<input placeholder="Parent Phone Number">
+<input placeholder="Emergency Contact">
+<input placeholder="Medical Condition">
+<textarea placeholder="Additional Notes"></textarea>
+<button>Save Record</button>
+</div>
 
-Login
-
-</button>
+<div class="card" id="results">
+<h2>Result Checker</h2>
+<input id="studentID" placeholder="Enter Student ID">
+<button onclick="checkResult()">Check Result</button>
+<div id="resultOutput"></div>
+</div>
 
 </div>
 
-</section>
-
-
-<!-- DASHBOARD -->
-
-<section id="dashboard">
-
-<h1 id="dashboardTitle"></h1>
-
-<div class="card">
-
-<p id="dashboardInfo"></p>
-
+<div class="social">
+<a href="tel:+2348063890326"><i class="fas fa-phone"></i></a>
+<a href="https://wa.me/2348129046747"><i class="fab fa-whatsapp"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61578653940561"><i class="fab fa-facebook-f"></i></a>
 </div>
-
-</section>
-
 
 <footer>
-
 <p>© 2026 Wasak Kiddies School</p>
-
 <p>Email: wasak1024@gmail.com</p>
-
 </footer>
 
-
 <script>
-
-function showPage(page){
-
-document.querySelectorAll("section")
-.forEach(x=>x.classList.remove("active"));
-
-document.getElementById(page)
-.classList.add("active");
-
-}
-
-
-function login(){
-
-let role=document.getElementById("role").value;
-
-let password=document.getElementById("password").value;
-
-let users={
-
-teacher:"teacher2026",
-spa:"spa2026",
-admin:"admin2026"
-
+const users={
+proprietor:"wasak-pro-2026",
+spa:"wasak-spa-2026",
+nursery1:"nur1-2026",
+nursery2:"nur2-2026",
+primary1:"pri1-2026",
+primary2:"pri2-2026",
+primary3:"pri3-2026",
+primary4:"pri4-2026",
+primary5:"pri5-2026",
+primary6:"pri6-2026"
 };
 
-if(password===users[role]){
+function login(){
+const role=document.getElementById('role').value;
+const password=document.getElementById('password').value;
 
-showPage("dashboard");
-
-document.getElementById("dashboardTitle")
-.innerText=role.toUpperCase()+" DASHBOARD";
-
-document.getElementById("dashboardInfo")
-.innerText="Login successful.";
-
+if(users[role]===password){
+document.getElementById('dashboard').classList.remove('hidden');
+document.getElementById('welcomeText').innerText=role.toUpperCase()+" DASHBOARD";
+window.scrollTo(0,700);
+}else{
+alert('Wrong password');
 }
-
-else{
-
-alert("Wrong password");
-
 }
-
-}
-
 
 function checkResult(){
-
-let id=document.getElementById("studentID").value;
-
-document.getElementById("resultOutput")
-.innerHTML=`
-
-<br>
-
-<h3>${id}</h3>
-
+const id=document.getElementById('studentID').value;
+document.getElementById('resultOutput').innerHTML=`
+<h4>${id}</h4>
 <p>Mathematics: 85</p>
-
 <p>English: 78</p>
-
 <p>Basic Science: 90</p>
-
-<strong>Average: 84%</strong>
-
-`;
-
+<strong>Average: 84%</strong>`;
 }
-
 </script>
 
 </body>
