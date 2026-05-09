@@ -1,320 +1,492 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wasak Kiddies School | Sound Education With Moral Excellence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --maroon: #800000;
-            --gold: #FFD700;
-            --white: #ffffff;
-            --light-gray: #f9f9f9;
-            --dark: #1a1a1a;
-            --success: #28a745;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--white); color: var(--dark); overflow-x: hidden; }
+<title>Wasak Kiddies School</title>
 
-        /* Navigation */
-        nav {
-            background: var(--maroon);
-            padding: 10px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0; z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .logo-box { display: flex; align-items: center; color: var(--white); cursor: pointer; }<img src="https://i.postimg.cc/mD8zHkX4/wasak-logo.png" alt="WKS Logo">
-        .logo-box img { img src="IMG-logo.png" alt="WKS Logo" }
-        .logo-text h1 { font-size: 1.1rem; letter-spacing: 1px; color: var(--gold); }
-        .logo-text p { font-size: 0.7rem; font-style: italic; }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        .nav-links { display: flex; list-style: none; gap: 20px; }
-        .nav-links a { color: white; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: 0.3s; }
-        .nav-links a:hover { color: var(--gold); }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
 
-        /* Floating Action Buttons */
-        .float-container { position: fixed; bottom: 25px; right: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 9999; }
-        .float-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 22px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: 0.3s; text-decoration: none; }
-        .wa { background: #25D366; } .fb { background: #1877F2; } .call { background: var(--maroon); border: 2px solid var(--gold); }
-        .float-btn:hover { transform: scale(1.1); }
+:root{
+    --maroon:#800000;
+    --gold:#FFD700;
+    --white:#ffffff;
+    --dark:#222;
+    --light:#f5f5f5;
+}
 
-        /* Sections */
-        section { display: none; padding: 60px 8%; min-height: 80vh; animation: fadeIn 0.4s ease-in; }
-        .active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+body{
+    background:white;
+    color:var(--dark);
+}
 
-        /* Hero / Home */
-        .hero { 
-            height: 70vh; 
-            background: linear-gradient(rgba(128,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop');
-            background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white;
-            border-radius: 0 0 50px 50px;
-        }
-        .hero h2 { font-size: 2.5rem; color: var(--gold); margin-bottom: 10px; }
-        .btn-main { padding: 12px 35px; background: var(--gold); color: var(--maroon); border-radius: 30px; text-decoration: none; font-weight: 700; margin-top: 20px; transition: 0.3s; border: none; cursor: pointer; }
-        .btn-main:hover { background: var(--white); transform: translateY(-3px); }
+/* NAVIGATION */
+nav{
+    background:var(--maroon);
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 5%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
 
-        /* Grid Layouts */
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
-        .card { background: var(--light-gray); padding: 25px; border-radius: 15px; border-left: 5px solid var(--maroon); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.logo-box{
+    display:flex;
+    align-items:center;
+    cursor:pointer;
+}
 
-        /* Forms & Portals */
-        .portal-container { max-width: 500px; margin: 40px auto; padding: 30px; background: #fff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 8px solid var(--maroon); }
-        input, select, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; outline: none; }
-        input:focus { border-color: var(--maroon); }
+.logo-box img{
+    width:55px;
+    height:55px;
+    border-radius:8px;
+    margin-right:10px;
+    border:2px solid var(--gold);
+    object-fit:cover;
+}
 
-        /* Dashboard Styles */
-        .dashboard-header { background: var(--maroon); color: white; padding: 20px; border-radius: 10px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; }
-        .tab-nav { display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 5px; }
-        .tab-btn { padding: 8px 20px; background: #eee; border: none; border-radius: 20px; cursor: pointer; white-space: nowrap; }
-        .tab-btn.active-tab { background: var(--gold); color: var(--maroon); font-weight: bold; }
+.logo-box h2{
+    color:var(--gold);
+    font-size:18px;
+}
 
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; background: white; }
-        th, td { padding: 12px; border: 1px solid #eee; text-align: left; font-size: 0.9rem; }
-        th { background: var(--maroon); color: white; }
+.logo-box p{
+    font-size:11px;
+}
 
-        footer { background: var(--dark); color: white; padding: 40px 8% 20px; text-align: center; font-size: 0.8rem; }
-        
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h2 { font-size: 1.8rem; }
-        }
-    </style>
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+/* SECTION */
+section{
+    display:none;
+    padding:40px 5%;
+    min-height:80vh;
+}
+
+.active{
+    display:block;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200');
+
+    background-size:cover;
+    background-position:center;
+    height:70vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+    border-radius:20px;
+}
+
+.hero h1{
+    font-size:40px;
+    color:var(--gold);
+}
+
+.btn{
+    background:var(--gold);
+    color:var(--maroon);
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    margin-top:20px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* CARD */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    background:var(--light);
+    padding:20px;
+    border-radius:12px;
+    border-left:5px solid var(--maroon);
+}
+
+/* FORM */
+.form-box{
+    max-width:500px;
+    margin:auto;
+    background:white;
+    box-shadow:0 0 15px rgba(0,0,0,.1);
+    padding:25px;
+    border-radius:15px;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+/* DASHBOARD */
+.dashboard-header{
+    background:var(--maroon);
+    color:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.hidden{
+    display:none;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery-grid img{
+    width:100%;
+    border-radius:12px;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+    .nav-links{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+}
+</style>
+
 </head>
 <body>
 
-    <div class="float-container">
-        <a href="tel:+2348063890326" class="float-btn call"><i class="fas fa-phone"></i></a>
-        <a href="https://wa.me/2348129046747" class="float-btn wa"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61578653940561" class="float-btn fb"><i class="fab fa-facebook-f"></i></a>
-    </div>
+<!-- NAV -->
+<nav>
 
-    <nav>
-        <div class="logo-box" onclick="showPage('home')">
-            <img src="https://i.postimg.cc/mD8zHkX4/wasak-logo.png" alt="WKS Logo">
-            <div class="logo-text">
-                <h1>WASAK KIDDIES SCHOOL</h1>
-                <p>Sound Education With Moral Excellence</p>
-            </div>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#" onclick="showPage('home')">Home</a></li>
-            <li><a href="#" onclick="showPage('about')">About</a></li>
-            <li><a href="#" onclick="showPage('results')">Check Results</a></li>
-            <li><a href="#" onclick="showPage('gallery')">Gallery</a></li>
-            <li><a href="#" onclick="showPage('portal')">Staff Login</a></li>
-        </ul>
-    </nav>
+<div class="logo-box" onclick="showPage('home')">
 
-    <section id="home" class="active">
-        <div class="hero">
-            <h2>Nurturing Great Minds</h2>
-            <p>Welcome to Wasak Kiddies School, Ilaro. Excellence starts here.</p>
-            <button class="btn-main" onclick="showPage('about')">Learn About Us</button>
-        </div>
+<!-- REPLACE THIS WITH YOUR SCHOOL LOGO -->
+<img src="IMG-logo.png" alt="School Logo">
 
-        <div class="grid-3">
-            <div class="card">
-                <i class="fas fa-bullhorn" style="color: var(--maroon); font-size: 2rem;"></i>
-                <h3 style="margin: 15px 0;">Latest News</h3>
-                <p>Admission for the 2026 academic session is now ongoing. Visit the admin office for details.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-calendar-alt" style="color: var(--maroon); font-size: 2rem;"></i>
-                <h3 style="margin: 15px 0;">Upcoming Event</h3>
-                <p>Inter-house sports competition scheduled for next month. Get your kits ready!</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-star" style="color: var(--maroon); font-size: 2rem;"></i>
-                <h3 style="margin: 15px 0;">Our Motto</h3>
-                <p>"Sound Education With Moral Excellence" - We build character and brains.</p>
-            </div>
-        </div>
-    </section>
+<div>
+<h2>WASAK KIDDIES SCHOOL</h2>
+<p>Sound Education With Moral Excellence</p>
+</div>
 
-    <section id="about">
-        <h2 style="color: var(--maroon); text-align: center;">About Our School</h2>
-        <div class="grid-3">
-            <div class="card">
-                <h3>Our Vision</h3>
-                <p>To be a leading educational institution providing world-class foundation for future leaders.</p>
-            </div>
-            <div class="card">
-                <h3>Management Team</h3>
-                <p><strong>Proprietor:</strong> Mr. Sanusi Ibrahim</p>
-                <p><strong>Administrator:</strong> Mrs. Afisu Titilayo</p>
-                <p><strong>SPA / IT Officer:</strong> Mr. Olaifa Anuoluwapo</p>
-            </div>
-            <div class="card">
-                <h3>Location</h3>
-                <p>Off Barrister Ajibola Street, Ikosi, Aregbeyo By Oke-ola, Phase II Ilaro, Ogun State.</p>
-            </div>
-        </div>
-    </section>
+</div>
 
-    <section id="results">
-        <div class="portal-container">
-            <h2 style="text-align: center; color: var(--maroon);">Result Checker</h2>
-            <p style="font-size: 0.8rem; text-align: center; margin-bottom: 15px;">Enter Student ID to view terminal report</p>
-            <input type="text" id="studentId" placeholder="WKS/2026/001">
-            <button class="btn-main" style="width: 100%;" onclick="checkResult()">Check Result</button>
-            <div id="resultOutput" style="margin-top: 20px;"></div>
-        </div>
-    </section>
+<ul class="nav-links">
+<li><a href="#" onclick="showPage('home')">Home</a></li>
+<li><a href="#" onclick="showPage('about')">About</a></li>
+<li><a href="#" onclick="showPage('results')">Results</a></li>
+<li><a href="#" onclick="showPage('gallery')">Gallery</a></li>
+<li><a href="#" onclick="showPage('portal')">Staff Login</a></li>
+</ul>
 
-    <section id="gallery">
-        <h2 style="color: var(--maroon); text-align: center; margin-bottom: 20px;">School Gallery</h2>
-        <div id="spa-upload-control" style="display: none; background: #eee; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-            <h4>SPA Management: Add Photo</h4>
-            <input type="text" id="imgUrl" placeholder="Paste Image Link Here">
-            <button onclick="addGalleryImg()" class="btn-main" style="margin-top: 0;">Add to Gallery</button>
-        </div>
-        <div class="grid-3" id="gallery-grid">
-            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500" style="width: 100%; border-radius: 10px;" alt="School">
-            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500" style="width: 100%; border-radius: 10px;" alt="Class">
-        </div>
-    </section>
+</nav>
 
-    <section id="portal">
-        <div class="portal-container">
-            <h2 style="text-align: center; color: var(--maroon);">Staff Portal</h2>
-            <select id="userRole">
-                <option value="teacher">Class Teacher</option>
-                <option value="spa">SPA (Media Officer)</option>
-                <option value="admin">Administrator / Proprietor</option>
-            </select>
-            <input type="password" id="loginPass" placeholder="Access Code">
-            <button class="btn-main" style="width: 100%;" onclick="login()">Login to Dashboard</button>
-        </div>
-    </section>
 
-    <section id="dashboard">
-        <div class="dashboard-header">
-            <div>
-                <h2 id="dashTitle">Teacher Dashboard</h2>
-                <span id="dashSubtitle">Class: Basic 1</span>
-            </div>
-            <button onclick="showPage('portal')" style="background: white; border: none; padding: 5px 15px; border-radius: 5px; cursor: pointer;">Logout</button>
-        </div>
+<!-- HOME -->
+<section id="home" class="active">
 
-        <div class="tab-nav">
-            <button class="tab-btn active-tab" onclick="switchTab('attendance')">Attendance</button>
-            <button class="tab-btn" onclick="switchTab('records')">Pupil Records</button>
-            <button class="tab-btn" onclick="switchTab('scores')">Upload Scores</button>
-            <button class="tab-btn" onclick="switchTab('complain')">Complaints</button>
-        </div>
+<div class="hero">
+<h1>Welcome To Wasak Kiddies School</h1>
+<p>Nurturing Great Minds For The Future</p>
 
-        <div id="content-attendance" class="tab-content">
-            <h3>Daily Register - <span id="currentDate"></span></h3>
-            <table>
-                <thead><tr><th>Name</th><th>Status</th></tr></thead>
-                <tbody id="attendance-rows">
-                    <tr><td>Adeola Blessing</td><td><input type="checkbox" checked></td></tr>
-                    <tr><td>John Ibrahim</td><td><input type="checkbox" checked></td></tr>
-                    <tr><td>Musa Yusuf</td><td><input type="checkbox"></td></tr>
-                </tbody>
-            </table>
-            <button class="btn-main" onclick="alert('Attendance Saved!')">Save Register</button>
-        </div>
+<button class="btn" onclick="showPage('about')">
+Learn More
+</button>
+</div>
 
-        <div id="content-records" class="tab-content" style="display:none;">
-            <h3>Register New Pupil</h3>
-            <div class="grid-3" style="background: white; padding: 20px; border-radius: 10px;">
-                <input type="text" placeholder="Full Name">
-                <input type="text" placeholder="Parent Contact">
-                <select><option>Nursery 1</option><option>Basic 1</option></select>
-                <button class="btn-main">Save Bio-Data</button>
-                <a href="#" style="color: var(--maroon); text-decoration: underline;">Download Bio-Data Form (PDF)</a>
-            </div>
-        </div>
+<div class="grid">
 
-        <div id="content-complain" class="tab-content" style="display:none;">
-            <h3>Staff Feedback / Complaints</h3>
-            <textarea rows="5" placeholder="Enter your suggestion or report..."></textarea>
-            <button class="btn-main">Submit to Admin</button>
-        </div>
-    </section>
+<div class="card">
+<h3>Admissions</h3>
+<p>Admission is currently open.</p>
+</div>
 
-    <footer>
-        <p>&copy; 2026 Wasak Kiddies School. All Rights Reserved.</p>
-        <p>Email: wasak1024@gmail.com | Phone: 0806 389 0326</p>
-    </footer>
+<div class="card">
+<h3>School Events</h3>
+<p>Inter-house sports coming soon.</p>
+</div>
 
-    <script>
-        function showPage(pageId) {
-            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
-            window.scrollTo(0,0);
+<div class="card">
+<h3>Our Motto</h3>
+<p>Sound Education With Moral Excellence.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+<h1>About Us</h1>
+
+<div class="grid">
+
+<div class="card">
+<h3>Vision</h3>
+<p>To build future leaders.</p>
+</div>
+
+<div class="card">
+<h3>Management</h3>
+<p>Proprietor: Mr. Sanusi Ibrahim</p>
+<p>Administrator: Mrs. Afisu Titilayo</p>
+<p>SPA Officer: Mr. Olaifa</p>
+</div>
+
+<div class="card">
+<h3>Location</h3>
+<p>Ilaro, Ogun State, Nigeria.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RESULTS -->
+<section id="results">
+
+<div class="form-box">
+
+<h2>Check Student Result</h2>
+
+<input type="text" id="studentID" placeholder="WKS/2026/001">
+
+<button class="btn" onclick="checkResult()">
+Check Result
+</button>
+
+<div id="resultBox"></div>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+<section id="gallery">
+
+<h1>School Gallery</h1>
+
+<div id="spaControl" class="hidden">
+<input type="text" id="imgURL" placeholder="Paste Image Link">
+<button class="btn" onclick="addImage()">Add Photo</button>
+</div>
+
+<div class="gallery-grid" id="galleryBox">
+
+<img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600">
+
+<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600">
+
+</div>
+
+</section>
+
+
+<!-- LOGIN -->
+<section id="portal">
+
+<div class="form-box">
+
+<h2>Staff Login</h2>
+
+<select id="userRole">
+<option value="teacher">Teacher</option>
+<option value="spa">SPA</option>
+<option value="admin">Proprietor</option>
+</select>
+
+<input type="password" id="password" placeholder="Enter Password">
+
+<button class="btn" onclick="login()">
+Login
+</button>
+
+</div>
+
+</section>
+
+
+<!-- DASHBOARD -->
+<section id="dashboard">
+
+<div class="dashboard-header">
+<h2 id="dashTitle">Dashboard</h2>
+<p id="dashInfo"></p>
+</div>
+
+<div class="card">
+<h3>Dashboard Access Granted</h3>
+<p>You are successfully logged in.</p>
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 Wasak Kiddies School</p>
+<p>Email: wasak1024@gmail.com</p>
+
+</footer>
+
+
+<script>
+
+function showPage(page){
+    document.querySelectorAll("section")
+    .forEach(sec=>sec.classList.remove("active"));
+
+    document.getElementById(page)
+    .classList.add("active");
+}
+
+
+function login(){
+
+    let role=document.getElementById("userRole").value;
+    let password=document.getElementById("password").value;
+
+    let passwords={
+
+        teacher:"teacher2026",
+        spa:"spa2026",
+        admin:"admin2026"
+
+    };
+
+    if(password===passwords[role]){
+
+        showPage("dashboard");
+
+        document.getElementById("dashTitle")
+        .innerText=role.toUpperCase()+" DASHBOARD";
+
+        if(role==="teacher"){
+            document.getElementById("dashInfo")
+            .innerText="Teacher Access";
         }
 
-        function switchTab(tab) {
-            document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active-tab'));
-            document.getElementById('content-' + tab).style.display = 'block';
-            event.currentTarget.classList.add('active-tab');
+        if(role==="spa"){
+            document.getElementById("dashInfo")
+            .innerText="Media Access";
+
+            document.getElementById("spaControl")
+            .classList.remove("hidden");
         }
 
-        function login() {
-            const role = document.getElementById('userRole').value;
-            const pass = document.getElementById('loginPass').value;
-
-            if(pass === "wasak2026") {
-                showPage('dashboard');
-                document.getElementById('dashTitle').innerText = role.toUpperCase() + " DASHBOARD";
-                
-                // Role specific views
-                if(role === 'spa') {
-                    document.getElementById('spa-upload-control').style.display = 'block';
-                    showPage('gallery');
-                }
-                if(role === 'admin') {
-                    document.getElementById('dashSubtitle').innerText = "Proprietor View: Full Access";
-                }
-            } else {
-                alert("Incorrect Access Code. Contact SPA Officer.");
-            }
+        if(role==="admin"){
+            document.getElementById("dashInfo")
+            .innerText="Full Administrative Access";
         }
 
-        function checkResult() {
-            const id = document.getElementById('studentId').value;
-            if(!id) return alert("Please enter a Student ID");
-            
-            document.getElementById('resultOutput').innerHTML = `
-                <div style="padding: 15px; border: 2px dashed var(--maroon); border-radius: 10px;">
-                    <h4>Result for ${id}</h4>
-                    <p>Term: 2nd Term 2026</p>
-                    <hr>
-                    <p>Mathematics: 85 (A)</p>
-                    <p>English: 78 (B)</p>
-                    <p>Basic Science: 90 (A)</p>
-                    <p><strong>Total Average: 84.3%</strong></p>
-                </div>
-            `;
-        }
+    }
 
-        function addGalleryImg() {
-            const url = document.getElementById('imgUrl').value;
-            if(url) {
-                const img = document.createElement('img');
-                img.src = url;
-                img.style.width = "100%";
-                img.style.borderRadius = "10px";
-                document.getElementById('gallery-grid').prepend(img);
-                alert("Image added to gallery!");
-            }
-        }
+    else{
+        alert("Wrong password");
+    }
 
-        // Set date
-        document.getElementById('currentDate').innerText = new Date().toDateString();
-    </script>
+}
+
+
+function checkResult(){
+
+    let id=document.getElementById("studentID").value;
+
+    if(id===""){
+        alert("Enter student ID");
+        return;
+    }
+
+    document.getElementById("resultBox").innerHTML=`
+
+        <br>
+
+        <h3>${id}</h3>
+
+        <p>Mathematics: 85</p>
+        <p>English: 78</p>
+        <p>Basic Science: 90</p>
+
+        <br>
+
+        <strong>Average: 84%</strong>
+
+    `;
+}
+
+
+function addImage(){
+
+    let url=document.getElementById("imgURL").value;
+
+    if(url===""){
+        return;
+    }
+
+    let img=document.createElement("img");
+
+    img.src=url;
+
+    document.getElementById("galleryBox")
+    .prepend(img);
+
+}
+
+</script>
+
 </body>
 </html>
